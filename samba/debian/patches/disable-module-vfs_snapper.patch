@@ -1,0 +1,18 @@
+diff -ur samba-4.6.5.a/source3/modules/wscript_build samba-4.6.5.b/source3/modules/wscript_build
+--- samba-4.6.5.a/source3/modules/wscript_build	2017-01-11 08:55:15.000000000 +0100
++++ samba-4.6.5.b/source3/modules/wscript_build	2017-06-18 22:58:08.035399257 +0200
+@@ -474,14 +474,6 @@
+                   internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_worm'),
+                   enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_worm'))
+ 
+-bld.SAMBA3_MODULE('vfs_snapper',
+-                 subsystem='vfs',
+-                 source='vfs_snapper.c',
+-                 deps='samba-util dbus-1',
+-                 init_function='',
+-                 internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_snapper'),
+-                 enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_snapper'))
+-
+ bld.SAMBA3_MODULE('vfs_vxfs',
+                  subsystem='vfs',
+                  source='lib_vxfs.c vfs_vxfs.c',

@@ -1,0 +1,4 @@
+# Some scripts are not executable by default: They are disabled.
+# They can be enabled with "ctdb enablescript <script>" command which sets the
+# executable bit
+ctdb: script-not-executable etc/ctdb/events.d/10.external
