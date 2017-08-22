@@ -1,3 +1,0 @@
-version=3
-opts="pgpsigurlmangle=s/tar\.gz/tar.asc/,decompress" \
-https://download.samba.org/pub/tevent/ tevent-(.+).tar.gz

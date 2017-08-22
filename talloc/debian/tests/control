@@ -1,3 +1,0 @@
-Tests: testsuite
-Depends: libtalloc-dev
-Restrictions: build-needed allow-stderr

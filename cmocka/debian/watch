@@ -1,3 +1,0 @@
-version=3
-# (see #731725) options=pgpsigurlmangle=s/xz$/asc/ \
-https://cmocka.org/files/1.0/cmocka-(.*).tar.xz

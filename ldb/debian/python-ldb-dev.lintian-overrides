@@ -1,2 +1,0 @@
-# This is actually a -dev package
-python-ldb-dev: wrong-section-according-to-package-name python-ldb-dev => python
