@@ -2,7 +2,6 @@
 *~
 *.swp
 config.status
-configure
 ctdb.pc
 publish*.sh
 push*.sh
@@ -10,7 +9,6 @@ web/packages
 TAGS
 tags
 bin
-Makefile
 config.h
 config.h.in
 config.log
@@ -30,5 +28,3 @@ tests/eventscripts/etc/iproute2
 tests/eventscripts/etc-ctdb/policy_routing
 include/ctdb_version.h
 packaging/RPM/ctdb.spec
-doc/*.[1-7]
-doc/*.[1-7].html
