@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+%:
+	dh $@ --list-missing
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DLIB_SUFFIX=/$(DEB_HOST_MULTIARCH) \
+		-DWITH_CMOCKERY_SUPPORT=ON \
+		-DUNIT_TESTING=ON
+
+override_dh_auto_build-indep:
+	$(MAKE) -C obj-* doc
+
+override_dh_auto_test-indep:
+
+override_dh_link-arch:
+	dh_link usr/lib/$(DEB_HOST_MULTIARCH)/libcmocka.so \
+		usr/lib/$(DEB_HOST_MULTIARCH)/libcmockery.so \
+		-plibcmocka-dev
+
+override_dh_auto_install-indep:
+	dh_install obj-*/doc/html usr/share/doc/cmocka-doc
+
+get-orig-source:
+	uscan --verbose --force --rename

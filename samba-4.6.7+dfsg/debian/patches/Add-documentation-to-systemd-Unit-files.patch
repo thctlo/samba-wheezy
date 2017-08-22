@@ -1,0 +1,68 @@
+From bf7245b7b39f70f37e1bb34999b016a655dce8c2 Mon Sep 17 00:00:00 2001
+From: Mathieu Parent <math.parent@gmail.com>
+Date: Thu, 12 May 2016 22:16:24 +0200
+Subject: Add documentation to systemd Unit files
+
+---
+ ctdb/config/ctdb.service          | 1 +
+ packaging/systemd/nmb.service     | 1 +
+ packaging/systemd/samba.service   | 1 +
+ packaging/systemd/smb.service     | 1 +
+ packaging/systemd/winbind.service | 1 +
+ 5 files changed, 5 insertions(+)
+
+Index: samba/ctdb/config/ctdb.service
+===================================================================
+--- samba.orig/ctdb/config/ctdb.service
++++ samba/ctdb/config/ctdb.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=CTDB
++Documentation=man:ctdbd(1) man:ctdb(7)
+ After=network-online.target time-sync.target
+ 
+ [Service]
+Index: samba/packaging/systemd/nmb.service
+===================================================================
+--- samba.orig/packaging/systemd/nmb.service
++++ samba/packaging/systemd/nmb.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Samba NMB Daemon
++Documentation=man:nmbd(8) man:samba(7) man:smb.conf(5)
+ After=network.target
+ 
+ [Service]
+Index: samba/packaging/systemd/samba.service
+===================================================================
+--- samba.orig/packaging/systemd/samba.service
++++ samba/packaging/systemd/samba.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Samba AD Daemon
++Documentation=man:samba(8) man:samba(7) man:smb.conf(5)
+ After=network.target
+ 
+ [Service]
+Index: samba/packaging/systemd/smb.service
+===================================================================
+--- samba.orig/packaging/systemd/smb.service
++++ samba/packaging/systemd/smb.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Samba SMB Daemon
++Documentation=man:smbd(8) man:samba(7) man:smb.conf(5)
+ After=network.target nmb.service winbind.service
+ 
+ [Service]
+Index: samba/packaging/systemd/winbind.service
+===================================================================
+--- samba.orig/packaging/systemd/winbind.service
++++ samba/packaging/systemd/winbind.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Samba Winbind Daemon
++Documentation=man:winbindd(8) man:samba(7) man:smb.conf(5)
+ After=network.target nmb.service
+ 
+ [Service]
